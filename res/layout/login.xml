@@ -14,7 +14,7 @@
         android:textSize="17sp"/>
  
     <!-- Input Name -->
-    <EditText android:id="@+id/reg_UserName"
+    <EditText android:id="@+id/log_Username"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
@@ -31,18 +31,18 @@
         android:textSize="17sp"/>
  
     <!-- Input Price -->
-    <EditText android:id="@+id/Password"
+
+    <EditText
+        android:id="@+id/log_Password"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:singleLine="true"
-        android:inputType="numberDecimal"/>
- 
-   
+        android:inputType="textPassword|numberDecimal"
+        android:singleLine="true" />
  
     <!-- Button Create Product -->
-    <Button android:id="@+id/btnCreateProduct"
+    <Button android:id="@+id/btnLoginUser"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dip"

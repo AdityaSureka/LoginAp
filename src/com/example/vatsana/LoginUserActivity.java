@@ -33,23 +33,23 @@ public class LoginUserActivity extends Activity {
     // url to create new product
  
     // JSON Node names
-    private static final String TAG_SUCCESS = "";
+    private static final String TAG_SUCCESS = "success";
     private static final int uid = 0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.login);
  
         // Edit Text
-        inputUserName = (EditText) findViewById(R.id.reg_username);
-        inputPassword = (EditText) findViewById(R.id.reg_password);
+        inputUserName = (EditText) findViewById(R.id.log_Username);
+        inputPassword = (EditText) findViewById(R.id.log_Password);
         loginErrorMsg = (TextView) findViewById(R.id.login_error);
 
         // Create button
-        Button btnCreateProduct = (Button) findViewById(R.id.btnCreateProduct);
+        Button btnLoginUser = (Button) findViewById(R.id.btnLoginUser);
  
         // button click event
-        btnCreateProduct.setOnClickListener(new View.OnClickListener() {
+        btnLoginUser.setOnClickListener(new View.OnClickListener() {
  
             @Override
             public void onClick(View view) {
@@ -83,7 +83,6 @@ public class LoginUserActivity extends Activity {
          * Creating product
 
          * */
-        int success;
         protected String doInBackground(String... args) {
             //String name = inputUserName.getText().toString();
            // String password = inputPassword.getText().toString();
@@ -102,12 +101,19 @@ public class LoginUserActivity extends Activity {
 
             // check for success tag
             try {
-                success = json.getInt(TAG_SUCCESS);
+               int success = json.getInt(TAG_SUCCESS);
                 if(success==1)
                 {
-                	Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                	Intent i = new Intent(getApplicationContext(), DashActivity.class);
                     startActivity(i);
                 }
+                
+                else
+                {
+                	Intent j = new Intent(getApplicationContext(), RegisterNewUserActivity.class);
+                    startActivity(j);
+                }
+               
                 } catch (JSONException e) {
                 e.printStackTrace();
             } 
@@ -119,11 +125,7 @@ public class LoginUserActivity extends Activity {
          * **/
         protected void onPostExecute(String file_url) {
            	pDialog.dismiss();
-        	if(success==0)
-        	{
-        		loginErrorMsg.setText("Incorrect username/password");
-        		
-        	}
+        
         }
  
     }

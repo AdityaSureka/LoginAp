@@ -28,12 +28,12 @@ public class DashActivity extends Activity {
         // Session class instance
         session = new SessionManager(getApplicationContext());
          
-        TextView UserName = (TextView) findViewById(R.id.reg_UserName);
+        TextView UserName = (TextView) findViewById(R.id.log_Username);
          
         // Button logout
         btnLogout = (Button) findViewById(R.id.btnLogout);
          
-        Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
          
          
         /**
