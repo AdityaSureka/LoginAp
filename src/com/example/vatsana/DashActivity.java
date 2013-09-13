@@ -16,6 +16,9 @@ public class DashActivity extends Activity {
      
     // Session Manager Class
     SessionManager session;
+    
+    TextView loginErrorMsg;
+
      
     // Button Logout
     Button btnLogout;
@@ -24,10 +27,11 @@ public class DashActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash);
+
          
         // Session class instance
         session = new SessionManager(getApplicationContext());
-         
+        loginErrorMsg = (TextView) findViewById(R.id.login_id);
         TextView UserName = (TextView) findViewById(R.id.log_Username);
          
         // Button logout
@@ -41,7 +45,7 @@ public class DashActivity extends Activity {
          * This will redirect user to LoginActivity is he is not
          * logged in
          * */
-        session.checkLogin();
+       // session.checkLogin();
          
         // get user data from session
         HashMap<String, String> user = session.getUserDetails();
@@ -49,9 +53,13 @@ public class DashActivity extends Activity {
         // name
         String name = user.get(SessionManager.KEY_USERNAME);
          
+		loginErrorMsg.setText(name);
+ 
+        
         // email
       //  String email = user.get(SessionManager.KEY_EMAIL);
-         
+      
+        
 		// displaying user data
 //        reg_UserName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
        // lblEmail.setText(Html.fromHtml("Email: <b>" + email + "</b>"));

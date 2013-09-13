@@ -36,7 +36,12 @@
  
         <activity
             android:name=".LoginUserActivity"
-            android:label="Add New Product" >
+            android:label="Login User" >
+        </activity>
+        
+        <activity
+            android:name=".DashActivity"
+            android:label="Login U" >
         </activity>
         
  

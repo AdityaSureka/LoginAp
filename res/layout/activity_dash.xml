@@ -14,6 +14,12 @@
         android:layout_marginTop="40dip"
         android:layout_marginBottom="10dip"/>
  
+     <TextView android:id="@+id/login_id"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#e30000"
+                    android:padding="10dip"
+                    android:textStyle="bold"/>
    
      
     <!-- Button to show session data -->
